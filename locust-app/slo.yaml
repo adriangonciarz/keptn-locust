@@ -1,0 +1,33 @@
+spec_version: '1.0'
+comparison:
+  compare_with: "single_result"
+  include_result_with_score: "pass"
+  aggregate_function: avg
+objectives:
+  - sli: average_rps
+    pass:
+      - criteria:
+          - "<=+5%"
+          - ">80"
+    warning:
+      - criteria:
+          - ">50"
+  - sli: error_rate_random_status
+    pass:
+      - criteria:
+          - "<=+5%"
+          - "<50"
+    warning:
+      - criteria:
+          - "<60"
+  - sli: error_rate_postito
+    pass:
+      - criteria:
+          - "<=+2%"
+          - "<3"
+    warning:
+      - criteria:
+          - "<5"
+total_score:
+  pass: "95%"
+  warning: "75%"

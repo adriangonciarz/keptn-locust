@@ -1,0 +1,5 @@
+spec_version: "1.0"
+indicators:
+  average_rps: sum(avg_over_time(locust_requests_current_rps[$DURATION_SECONDS]))
+  error_rate_random_status: sum(rate(locust_errors{service="locust-metrics-exporter", name="/random_status"}[$DURATION_SECONDS]))
+  error_rate_postito: sum(rate(locust_errors{service="locust-metrics-exporter", name="/postito"}[$DURATION_SECONDS]))

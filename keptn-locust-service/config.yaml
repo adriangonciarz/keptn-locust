@@ -1,0 +1,6 @@
+- teststrategy: light
+  users: 2
+  spawn_rate: 1
+- teststrategy: heavy
+  users: 10
+  spawn_rate: 3
